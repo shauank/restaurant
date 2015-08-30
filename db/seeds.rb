@@ -6,3 +6,11 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+
+
+FactoryGirl.create(:cuisine_with_detail)
+
+10.times do
+  FactoryGirl.create(:food_type_with_detail)
+end
+  

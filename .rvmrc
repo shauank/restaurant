@@ -1,0 +1,11 @@
+ NOT EDIT THIS FILE ***
+# unless you are responsible for changing the Ruby version Everywhere:
+# * the deploy scripts -- see: config/deploy.rb
+# * PRODUCTION, all STAGING environments, Jenkins CI
+# * You need to also ensure QA and Flight plans are created to
+#   get this change all the way into PRODUCTION.
+# * ree-1.8.7-2012.02 is in PRODUCTION prior to 3/28/2013 by DMB
+# * ruby-1.9.3-p327 to be put into PRODUCTION on 3/28/2013 by DMB
+rvm use ruby-2.2.1 --create
+export USE_BUNDLER=force
+
