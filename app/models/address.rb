@@ -1,3 +1,3 @@
 class Address < ActiveRecord::Base
-  belongs_to :restaurant_detail
+  belongs_to :detail
 end
