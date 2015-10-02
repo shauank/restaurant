@@ -5,7 +5,7 @@ FactoryGirl.define do
   
   factory :cuisine_with_detail, parent: :cuisine do
     
-    ignore do 
+    transient do 
       num_details 10
     end
     

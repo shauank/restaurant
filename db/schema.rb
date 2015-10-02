@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150829180020) do
+ActiveRecord::Schema.define(version: 20150913062630) do
 
   create_table "addresses", force: true do |t|
     t.datetime "created_at"
@@ -31,20 +31,20 @@ ActiveRecord::Schema.define(version: 20150829180020) do
     t.string   "typ"
   end
 
+  create_table "cuisines_details", id: false, force: true do |t|
+    t.integer "detail_id"
+    t.integer "cuisine_id"
+  end
+
   create_table "details", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
     t.string   "string"
-    t.datetime "hours_from"
-    t.datetime "hours_to"
+    t.string   "hours_from"
+    t.string   "hours_to"
     t.integer  "price_from"
     t.integer  "price_to"
-  end
-
-  create_table "cuisines_details", id: false, force: true do |t|
-    t.integer "detail_id"
-    t.integer "cuisine_id"
   end
 
   create_table "details_food_types", id: false, force: true do |t|
@@ -56,6 +56,10 @@ ActiveRecord::Schema.define(version: 20150829180020) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "typ"
+  end
+
+  create_table "sql_injection", id: false, force: true do |t|
+    t.integer "name"
   end
 
 end

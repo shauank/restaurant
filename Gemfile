@@ -33,7 +33,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # gem 'capistrano-rails', group: :development
 
 # Use debuggerÞ
-# gem 'debugger', group: [:development, :test]
+gem 'byebug', group: [:development, :test]
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
@@ -45,3 +45,6 @@ gem 'factory_girl'
 gem "factory_girl_rails", "~> 4.0"
 gem 'faker'
 gem 'mysql2'
+gem 'arel-helpers'
+gem "rspec-rails"
+gem 'database_cleaner'

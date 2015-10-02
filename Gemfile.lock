@@ -28,7 +28,10 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
+    arel-helpers (2.1.0)
+      activerecord (>= 3.1.0, < 5)
     builder (3.2.2)
+    byebug (6.0.2)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -36,6 +39,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.9.1.1)
+    database_cleaner (1.5.0)
     diff-lcs (1.2.5)
     erubis (2.7.0)
     execjs (2.6.0)
@@ -139,7 +143,10 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+  arel-helpers
+  byebug
   coffee-rails (~> 4.0.0)
+  database_cleaner
   factory_girl
   factory_girl_rails (~> 4.0)
   faker
