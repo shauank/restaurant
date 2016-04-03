@@ -1,0 +1,43 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+#header{
+	ul{
+		list-style: none;
+		ul{
+			position: absolute;
+			display: none;
+			ul{
+				margin-left: 120px;
+				top: opx;
+			}
+		}
+		
+		li{
+			background-color: red;
+			border: 1px solid white;
+			width: 120px;
+			height: 35px;
+			line-height: 35px;
+			text-align: center;
+			float: left;
+			position: relative;
+			border-radius:8px;
+			a{
+				text-decoration: none;
+				color:white;
+				display:block;
+				&:hover{
+					background-color: green;
+					border-radius:8px;
+				}
+			}
+			&:hover > ul{
+				display: block;
+			}
+		}
+	}
+}
+	
+	

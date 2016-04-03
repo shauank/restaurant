@@ -22,16 +22,23 @@ require 'rspec/rails'
 require 'factory_girl'
 require 'byebug'
 require 'database_cleaner'
+require 'devise'
+
+ENV["devise.mapping"] ||= Devise.mappings[:user].to_s
 
 RSpec.configure do |config|
   
   config.before do
+    # @request.env["devise.mapping"] = Devise.mappings[:admin]
+    
     DatabaseCleaner.start
   end
   
   config.after do
     DatabaseCleaner.clean
   end
+  
+  
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
@@ -54,6 +61,10 @@ RSpec.configure do |config|
     # `true` in RSpec 4.
     mocks.verify_partial_doubles = true
   end
+  
+  
+  config.include Devise::TestHelpers
+  # config.infer_spec_type_from_file_location!
 
 # The settings below are suggested to provide a good initial experience
 # with RSpec, but feel free to customize to your heart's content.

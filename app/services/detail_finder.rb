@@ -15,6 +15,8 @@ module Services
       chain = chain.where(Detail[:price_to].lteq(@params[:price_to])) if @params[:price_to].present?
       chain = chain.where(Detail[:hours_from].gteq(@params[:hours_from])) if @params[:hours_from].present?
       chain = chain.where(Detail[:hours_to].lteq(@params[:hours_to])) if @params[:hours_to].present? 
+      chain = chain.order(Detail[:price_from]) if @params[:price_sort].present? && @params[:price_sort] == 'high_to_low'
+      chain = chain.order(price_from: :desc) if @params[:price_sort].present? && @params[:price_sort] == 'low_to_high'
       chain           
     end
   end

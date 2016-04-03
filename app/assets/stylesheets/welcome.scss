@@ -1,0 +1,16 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#banner{
+    position:absolute;
+    background-image:url("bg.jpg");
+    background-repeat:repeat-x;
+    width:50%;
+    height: 100px; /* Change to the height you need */
+    top:0px;
+    left:0px;
+//    background: image-url('bg.jpg');
+    margin:0;padding:0;
+    text-align: center;
+}
+

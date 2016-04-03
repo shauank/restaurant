@@ -1,0 +1,60 @@
+.row
+  .small-5.columns
+    .row
+      .small-3.columns
+        = label_tag 'name', nil, class: 'right inline'
+      .small-9.column
+        = text_field_tag 'name',@detail.name,placeholder: 'Enter name here...',disabled: true
+    .row
+      .small-3.columns
+        = label_tag 'hours_from', 'Hours From', class: 'right inline'
+      .small-9.column
+        = text_field_tag 'hours_from',@detail.hours_from,placeholder: 'Enter starting of hours here...', disabled: true
+    .row
+      .small-3.columns
+        = label_tag 'hours_to', 'Hours To', class: 'right inline'
+      .small-9.column
+        = text_field_tag 'hours_to',@detail.hours_to,placeholder: 'Enter ending of hours here...', disabled: true
+    .row
+      .small-3.columns
+        = label_tag 'price_from', 'Pirce From', class: 'right inline'
+      .small-9.column
+        = text_field_tag 'price_from',@detail.price_from,placeholder: 'Enter starting of price here...', disabled: true
+    .row
+      .small-3.columns
+        = label_tag 'price_to', 'Price To', class: 'right inline'
+      .small-9.column
+        = text_field_tag 'price_to',@detail.price_to,placeholder: 'Enter end of price here...', disabled: true
+    .row
+      .small-12
+        = image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@detail.addresses.first.try(:latitude)}%2C#{@detail.addresses.first.try(:longitude)}"
+    .row
+      .small-12
+        = link_to 'Edit', edit_detail_path(@detail), class: 'button round'
+        = link_to 'Back', details_path, class: 'button round'
+    
+    
+/ %p#notice= notice
+/
+/ %p
+/   %b Image
+/   = image_tag @detail.photo.url(:medium)
+/ %p
+/   %b Name:
+/   = @detail.name
+/ %p
+/   %b Hours from:
+/   = @detail.hours_from
+/ %p
+/   %b Hours to:
+/   = @detail.hours_to
+/ %p
+/   %b Price from:
+/   = @detail.price_from
+/ %p
+/   %b Price to:
+/   = @detail.price_to
+
+/ = link_to 'Edit', edit_detail_path(@detail)
+/ \|
+/ = link_to 'Back', details_path
