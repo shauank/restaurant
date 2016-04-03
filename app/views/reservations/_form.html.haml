@@ -1,0 +1,22 @@
+= simple_form_for [@reservation.detail, @reservation]  do |f|
+  = f.error_notification
+  .row
+    .small-5.columns
+  .row
+    .small-3.columns
+      = f.label :seats, class: 'right inline'
+    .small-9.column
+      = f.text_field :seats
+  .row
+    .small-3.columns
+      = f.label :reserved_date, class: 'right inline'
+    .small-9.column
+      = f.text_field :reserved_date
+  .row
+    .small-3.columns
+      = f.label :reserved_time, class: 'right inline'
+    .small-9.column
+      = f.text_field :reserved_time
+  .row
+    .small-1
+      = f.submit "Reserve", class: 'button round'

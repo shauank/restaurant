@@ -1,0 +1,19 @@
+%h1 Listing reservations
+
+%table
+  %thead
+    %tr
+      %th
+      %th
+      %th
+
+  %tbody
+    - @reservations.each do |reservation|
+      %tr
+        %td= reservation.number
+        %td= reservation.reserved_date
+        %td= reservation.reserved_time
+        %td= reservation.seats
+        %td= link_to 'Detail', detail_reservation_path(reservation.detail, reservation)
+
+= link_to 'New Reservation', new_detail_reservation_path

@@ -1,0 +1,7 @@
+%div
+  .row
+    = detail.name
+    = detail.price_from
+    = link_to 'Reserve', new_detail_reservation_path(detail), class: 'button round'
+    = link_to 'Edit', edit_detail_path(detail), class: 'button round'
+    

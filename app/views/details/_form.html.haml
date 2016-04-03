@@ -1,0 +1,43 @@
+= form_for @detail, :html => { :multipart => true } do |f|
+  - if @detail.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@detail.errors.count, "error")} prohibited this detail from being saved:"
+      %ul
+        - @detail.errors.full_messages.each do |msg|
+          %li= msg		  
+  .row
+    .small-5.columns
+      .row
+        .small-3.columns
+          = f.label :name, class: 'right inline'
+        .small-9.column
+          = f.text_field :name
+      .row
+        .small-3.columns
+          = f.label :hours_from, class: 'right inline'
+        .small-9.column
+          = f.text_field :hours_from
+      .row
+        .small-3.columns
+          = f.label :hours_to, class: 'right inline'
+        .small-9.column
+          = f.text_field :hours_to
+      .row
+        .small-3.columns
+          = f.label :price_from, class: 'right inline'
+        .small-9.column
+          = f.text_field :price_from
+      .row
+        .small-3.columns
+          = f.label :price_to, class: 'right inline'
+        .small-9.column
+          = f.text_field :price_to
+      .row
+        .small-3.columns
+        .small-9.column
+          = f.file_field :photo
+      .row
+        .small-11
+        .small-1
+          = f.submit "Save", class: 'button round'
+	  	

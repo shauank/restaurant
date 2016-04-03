@@ -1,0 +1,7 @@
+%h1 Editing reservation
+
+= render 'form'
+
+= link_to 'Show', detail_reservation_path(@reservation.detail, @reservation)
+\|
+= link_to 'Back', detail_reservations_path

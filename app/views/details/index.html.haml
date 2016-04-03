@@ -1,0 +1,18 @@
+/ %ul.small-block-grid-2.small-block-grid-3.small-block-grid-4
+/   - @details.each do |detail|
+/     - if detail.photo.exists?
+/       %li
+/         = link_to image_tag(detail.photo.url), detail
+
+.row
+  .small-3.columns
+    %h3 Detail Filter
+    = form_tag("/details", method: "get") do
+      = text_field_tag 'detail_filter[name]', @filter[:name], placeholder: 'Enter name here...'
+      = radio_button_tag 'detail_filter[price_sort]' , 'high_to_low', @filter[:price_sort] == 'high_to_low' 
+      = radio_button_tag 'detail_filter[price_sort]' , 'low_to_high', @filter[:price_sort] == 'low_to_high' 
+      = submit_tag 'Search'
+  .small-9.columns
+    = render @details
+    
+        

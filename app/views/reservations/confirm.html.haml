@@ -1,0 +1,6 @@
+%h1 Reservation has been confirm. 
+
+= @reservation.status 
+= @reservation.number
+
+= link_to 'Do another reservation', new_detail_reservation_path(@reservation.detail)

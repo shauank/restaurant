@@ -1,0 +1,40 @@
+%p#notice= notice
+
+.row
+  = form_tag(confirm_detail_reservation_path, method: "put") do
+    .small-5.columns
+      .row
+        .small-3.columns
+          = label_tag 'Reserved seats', nil, class: 'right inline'
+        .small-9.column
+          = text_field_tag 'name',@reservation.seats,placeholder: 'Enter name here...',disabled: true
+      .row
+        .small-3.columns
+          = label_tag 'Reserved date', nil, class: 'right inline'
+        .small-9.column
+          = text_field_tag 'reserved_date',@reservation.reserved_date,placeholder: 'Enter name here...',disabled: true
+      .row
+        .small-3.columns
+          = label_tag 'Reserved time', nil, class: 'right inline'
+        .small-9.column
+          = text_field_tag 'reserved_time',@reservation.reserved_time,placeholder: 'Enter name here...',disabled: true
+      .row
+        .small-3.columns
+          = label_tag 'Reserved Status', nil, class: 'right inline'
+        .small-9.column
+          = text_field_tag 'reservation_status',@reservation.status,placeholder: '...',disabled: true
+
+      - if @reservation.can_confirm?
+        .row
+          .small-12.columns
+            - current_user.payment_profiles.each do |pf|
+              = radio_button_tag 'selected_card', pf.payment_profile_id
+              = pf.card_number          
+
+      - if @reservation.can_edit?
+        = link_to 'Edit', edit_detail_reservation_path(@reservation.detail, @reservation)
+        \|
+      = link_to 'Back', detail_reservations_path
+      
+      - if @reservation.can_confirm?      
+        = submit_tag 'Pay to confirm'
